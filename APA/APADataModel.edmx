@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="APADataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DivisionReps">
+          <Key>
+            <PropertyRef Name="DivRepDivisionNumber" />
+          </Key>
+          <Property Name="DivRepDivisionNumber" Type="int" Nullable="false" />
+          <Property Name="DivRepFirstName" Type="text" Nullable="false" />
+          <Property Name="DivRepLastName" Type="text" />
+          <Property Name="DivRepPhone" Type="text" />
+          <Property Name="DivRepEmail" Type="text" />
+          <Property Name="DivRepPassword" Type="text" />
+        </EntityType>
+        <EntityType Name="Players">
+          <Key>
+            <PropertyRef Name="PlayerNumber" />
+          </Key>
+          <Property Name="PlayerNumber" Type="int" Nullable="false" />
+          <Property Name="PlayerFirstName" Type="text" Nullable="false" />
+          <Property Name="PlayerLastName" Type="text" Nullable="false" />
+          <Property Name="SkillLevel" Type="int" Nullable="false" />
+          <Property Name="MatchesPlayed" Type="int" Nullable="false" />
+          <Property Name="PlayerDivNumber" Type="int" Nullable="false" />
+          <Property Name="PlayerTeamNumber" Type="int" Nullable="false" />
+          <Property Name="Address" Type="text" Nullable="false" />
+          <Property Name="City" Type="text" Nullable="false" />
+          <Property Name="State" Type="text" Nullable="false" />
+          <Property Name="Zip" Type="text" Nullable="false" />
+          <Property Name="PlayerPhone" Type="text" Nullable="false" />
+          <Property Name="PlayerEmail" Type="text" Nullable="false" />
+          <Property Name="Status" Type="text" Nullable="false" />
+          <Property Name="CardNumber" Type="text" Nullable="false" />
+          <Property Name="CardExpDate" Type="text" Nullable="false" />
+          <Property Name="CVC" Type="text" Nullable="false" />
+          <Property Name="PlayerPassword" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Teams">
+          <Key>
+            <PropertyRef Name="TeamNumber" />
+          </Key>
+          <Property Name="TeamNumber" Type="int" Nullable="false" />
+          <Property Name="TeamName" Type="text" Nullable="false" />
+          <Property Name="TeamLocation" Type="text" Nullable="false" />
+          <Property Name="TeamPoints" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="APADataModelStoreContainer">
+          <EntitySet Name="DivisionReps" EntityType="Self.DivisionReps" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Players" EntityType="Self.Players" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Teams" EntityType="Self.Teams" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="APADataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DivisionRep">
+          <Key>
+            <PropertyRef Name="DivRepDivisionNumber" />
+          </Key>
+          <Property Name="DivRepDivisionNumber" Type="Int32" Nullable="false" />
+          <Property Name="DivRepFirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DivRepLastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DivRepPhone" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DivRepEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DivRepPassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Player">
+          <Key>
+            <PropertyRef Name="PlayerNumber" />
+          </Key>
+          <Property Name="PlayerNumber" Type="Int32" Nullable="false" />
+          <Property Name="PlayerFirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PlayerLastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SkillLevel" Type="Int32" Nullable="false" />
+          <Property Name="MatchesPlayed" Type="Int32" Nullable="false" />
+          <Property Name="PlayerDivNumber" Type="Int32" Nullable="false" />
+          <Property Name="PlayerTeamNumber" Type="Int32" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Zip" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PlayerPhone" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PlayerEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CardNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CardExpDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CVC" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PlayerPassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Team">
+          <Key>
+            <PropertyRef Name="TeamNumber" />
+          </Key>
+          <Property Name="TeamNumber" Type="Int32" Nullable="false" />
+          <Property Name="TeamName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TeamLocation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TeamPoints" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="APADataEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DivisionReps" EntityType="Self.DivisionRep" />
+          <EntitySet Name="Players" EntityType="Self.Player" />
+          <EntitySet Name="Teams" EntityType="Self.Team" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="APADataModelStoreContainer" CdmEntityContainer="APADataEntities">
+          <EntitySetMapping Name="DivisionReps">
+            <EntityTypeMapping TypeName="APADataModel.DivisionRep">
+              <MappingFragment StoreEntitySet="DivisionReps">
+                <ScalarProperty Name="DivRepDivisionNumber" ColumnName="DivRepDivisionNumber" />
+                <ScalarProperty Name="DivRepFirstName" ColumnName="DivRepFirstName" />
+                <ScalarProperty Name="DivRepLastName" ColumnName="DivRepLastName" />
+                <ScalarProperty Name="DivRepPhone" ColumnName="DivRepPhone" />
+                <ScalarProperty Name="DivRepEmail" ColumnName="DivRepEmail" />
+                <ScalarProperty Name="DivRepPassword" ColumnName="DivRepPassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Players">
+            <EntityTypeMapping TypeName="APADataModel.Player">
+              <MappingFragment StoreEntitySet="Players">
+                <ScalarProperty Name="PlayerNumber" ColumnName="PlayerNumber" />
+                <ScalarProperty Name="PlayerFirstName" ColumnName="PlayerFirstName" />
+                <ScalarProperty Name="PlayerLastName" ColumnName="PlayerLastName" />
+                <ScalarProperty Name="SkillLevel" ColumnName="SkillLevel" />
+                <ScalarProperty Name="MatchesPlayed" ColumnName="MatchesPlayed" />
+                <ScalarProperty Name="PlayerDivNumber" ColumnName="PlayerDivNumber" />
+                <ScalarProperty Name="PlayerTeamNumber" ColumnName="PlayerTeamNumber" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="PlayerPhone" ColumnName="PlayerPhone" />
+                <ScalarProperty Name="PlayerEmail" ColumnName="PlayerEmail" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
+                <ScalarProperty Name="CardExpDate" ColumnName="CardExpDate" />
+                <ScalarProperty Name="CVC" ColumnName="CVC" />
+                <ScalarProperty Name="PlayerPassword" ColumnName="PlayerPassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Teams">
+            <EntityTypeMapping TypeName="APADataModel.Team">
+              <MappingFragment StoreEntitySet="Teams">
+                <ScalarProperty Name="TeamNumber" ColumnName="TeamNumber" />
+                <ScalarProperty Name="TeamName" ColumnName="TeamName" />
+                <ScalarProperty Name="TeamLocation" ColumnName="TeamLocation" />
+                <ScalarProperty Name="TeamPoints" ColumnName="TeamPoints" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
